@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dawat-e-Walima · Mohammad Rayyan &amp; Muskan Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04201a;--emerald:#0b4a3b;--deep:#06251e;--gold:#d9b45a;--gold2:#f6e3a1;--ivory:#fbf4e4;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{height:100%;margin:0;background:var(--bg);color:var(--ivory);font-family:'Cormorant Garamond',Georgia,serif;overflow:hidden}
+.invite{position:fixed;inset:0;z-index:1;overflow-y:auto;opacity:0;transform:scale(1.14);transition:opacity 1.6s .7s,transform 2.6s .5s cubic-bezier(.2,.7,.2,1);background:radial-gradient(ellipse at 50% 0%,#0f5a47 0,var(--bg) 70%);background-attachment:fixed}
+body.open .invite{opacity:1;transform:none}
+.card{max-width:560px;margin:0 auto;padding:max(56px,env(safe-area-inset-top,0px)) 26px 72px;text-align:center;border-inline:1px solid rgba(217,180,90,.25)}
+.bism{font-family:Amiri,serif;font-size:clamp(28px,7vw,40px);color:var(--gold2);margin:0 0 6px;line-height:1.6}
+.orn{display:flex;align-items:center;gap:12px;justify-content:center;margin:18px auto;color:var(--gold);max-width:320px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn::after{transform:scaleX(-1)}
+.orn svg{width:26px;height:26px}
+p{margin:0;font-size:20px;line-height:1.6}
+.small{font-size:17px;opacity:.85;font-style:italic}
+.names{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(46px,13vw,68px);line-height:1.05;margin:10px 0;background:linear-gradient(180deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.amp{display:block;font-size:.5em;color:var(--gold);-webkit-text-fill-color:var(--gold)}.amp.weds{font-family:'Cormorant Garamond',serif;font-size:.3em;letter-spacing:.25em}.who{margin:2px 0 14px;font-size:17px;line-height:1.5}.list{font-size:17px;margin-top:22px;line-height:1.6}.list b{color:var(--gold2);font-weight:600}
+.date{font-size:clamp(26px,7vw,34px);font-weight:600;color:var(--gold2);margin-top:6px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0}
+.count div{border:1px solid rgba(217,180,90,.45);border-radius:60px 60px 6px 6px;padding:14px 4px 10px;background:rgba(0,0,0,.2)}
+.count b{display:block;font-size:30px;font-weight:600;color:var(--gold2)}
+.count span{font-size:15px;opacity:.8}
+.verse{font-style:italic;font-size:19px;margin-top:8px}
+.btns{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+.btn{display:block;padding:14px 20px;border:1px solid var(--gold);color:var(--gold2);text-decoration:none;border-radius:40px;font-size:20px;transition:background .3s,color .3s}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:var(--deep);outline:none}
+.btn.main{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--deep);font-weight:600}
+.dots{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.dots i{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:var(--gold2);box-shadow:0 0 8px var(--gold);animation:rise linear infinite;opacity:0}
+@keyframes rise{0%{opacity:0;transform:translateY(0)}15%{opacity:.9}100%{opacity:0;transform:translateY(-105vh)}}
+.doors{position:fixed;inset:0;z-index:5;perspective:1800px;overflow:hidden;transition:opacity .5s 2.4s}
+.door{position:absolute;top:0;bottom:0;width:50%;background:linear-gradient(160deg,var(--emerald),var(--deep));transition:transform 2.6s cubic-bezier(.65,.05,.25,1);backface-visibility:hidden;box-shadow:0 0 40px #000}
+.door::before{content:"";position:absolute;inset:0;opacity:.6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L37 23L60 30L37 37L30 60L23 37L0 30L23 23Z' fill='none' stroke='%23d9b45a' stroke-opacity='.3'/%3E%3C/svg%3E")}
+.door::after{content:"";position:absolute;top:7%;bottom:6%;border:2px solid var(--gold);box-shadow:inset 0 0 0 6px var(--deep),inset 0 0 0 7px rgba(217,180,90,.5)}
+.l{left:0;transform-origin:left center}.l::after{left:6%;right:0;border-right:0;border-top-left-radius:100% 32%}
+.r{right:0;transform-origin:right center}.r::after{right:6%;left:0;border-left:0;border-top-right-radius:100% 32%}
+.handle{position:absolute;top:52%;width:44px;height:44px;border-radius:50%;border:4px solid var(--gold);background:radial-gradient(circle,var(--gold2),var(--gold) 60%,#8a6d22);z-index:2}
+.l .handle{right:16px}.r .handle{left:16px}
+body.open .l{transform:rotateY(-112deg)}body.open .r{transform:rotateY(112deg)}
+body.open .doors{opacity:0;pointer-events:none}
+.seal{position:fixed;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle at 35% 30%,var(--gold2),var(--gold) 55%,#8a6d22);color:var(--deep);font:600 17px/1.15 'Cormorant Garamond',serif;box-shadow:0 0 0 6px rgba(217,180,90,.25),0 0 50px rgba(246,227,161,.5);animation:pulse 2.2s ease-in-out infinite;transition:opacity .5s,transform .8s}
+.seal svg{width:54px;height:54px;display:block;margin:0 auto 2px}
+.seal:focus-visible{outline:3px solid #fff;outline-offset:6px}
+.title{position:fixed;z-index:6;top:9%;left:0;right:0;text-align:center;pointer-events:none;transition:opacity .6s}
+.title b{display:block;font:400 clamp(30px,8vw,46px)/1.5 Amiri,serif;color:var(--gold2)}
+.title span{font-size:20px;letter-spacing:.2em;color:var(--gold)}
+body.open .seal{opacity:0;transform:translate(-50%,-50%) scale(2.2);pointer-events:none}
+body.open .title{opacity:0}
+@keyframes pulse{50%{box-shadow:0 0 0 14px rgba(217,180,90,.08),0 0 80px rgba(246,227,161,.8)}}
+.in>*{opacity:0;transform:translateY(14px)}
+body.open .in>*{animation:up .9s forwards}
+@keyframes up{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.door,.invite,.doors{transition-duration:.01s;transition-delay:0s}.seal,.dots i{animation:none}body.open .in>*{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<div class="dots" id="dots" aria-hidden="true"></div>
+
+<main class="invite" id="invite">
+  <div class="card in">
+    <h2 class="bism" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
+    <p class="small">In the name of Allah, the Most Beneficent, the Most Merciful</p>
+    <p style="margin-top:14px">Mrs. &amp; Mr. Parvez Alam<br>request the honour of your presence on the auspicious occasion of the</p>
+    <div class="names" style="font-size:clamp(48px,14vw,72px);margin:6px 0 0">Dawat-e-Walima</div>
+    <p class="small">of their beloved son</p>
+    <div class="names"><span id="groom">Mohammad Rayyan</span><span class="amp weds">weds</span><span id="bride">Muskan Khan</span></div>
+    <p class="who">S/o Mr. Parvez Alam<br>Vill. &amp; Post Mohamamdpur Gaunti<br>Distt. Fatehpur (U.P.)</p>
+    <p class="who">D/o Mr. Khursheed Alam Khan<br>Tamkuhi Road, Distt. Kushi Nagar (U.P.)</p>
+    <div class="orn"><svg viewBox="0 0 100 100"><path d="M50 4L61 39L96 50L61 61L50 96L39 61L4 50L39 39Z" fill="none" stroke="currentColor" stroke-width="5"/></svg></div>
+    <p class="small">In sha Allah</p>
+    <p class="date" id="dateText"></p>
+    <p id="timeText"></p>
+    <p class="small" style="margin-top:12px">:: Venue ::</p>
+    <p class="small" id="venueText"></p>
+    <div class="count" id="count" aria-label="Countdown to the Walima">
+      <div><b id="cd">0</b><span>days</span></div><div><b id="ch">0</b><span>hours</span></div><div><b id="cm">0</b><span>minutes</span></div><div><b id="cs">0</b><span>seconds</span></div>
+    </div>
+    <p class="list"><b>R.S.V.P.</b><br>Mr. Salamatullah, Nooruzzama, Sartaz Alam, Maseehuddin, Shamshuzzama, Abdul Razzaque, Gufran Ahmed, Sajid Ali, Safey Ali, Sujood Ali, all relatives &amp; friends</p>
+    <p class="list"><b>W.B.C.F.</b><br>Mohammad Arsh, Mohammad Zayyan Shazil &amp; relatives</p>
+    <div class="btns">
+      <a class="btn main" id="rsvp" target="_blank" rel="noopener">Confirm on WhatsApp</a>
+      <a class="btn" id="cal" target="_blank" rel="noopener">Add to calendar</a>
+      <a class="btn" id="map" target="_blank" rel="noopener">Open location</a>
+    </div>
+    <div class="orn" style="margin-top:34px"><svg viewBox="0 0 100 100"><path d="M50 4L61 39L96 50L61 61L50 96L39 61L4 50L39 39Z" fill="none" stroke="currentColor" stroke-width="5"/></svg></div>
+    
+  </div>
+</main>
+
+<div class="doors" id="doors">
+  <div class="door l"><span class="handle"></span></div>
+  <div class="door r"><span class="handle"></span></div>
+</div>
+<div class="title"><b lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ</b><span>DAWAT-E-WALIMA</span></div>
+<button class="seal" id="seal" type="button" aria-label="Open the invitation">
+  <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M62 18a34 34 0 1 0 0 64a32 32 0 1 1 0-64z" fill="#06251e"/><path d="M76 41L78 48L85 50L78 52L76 59L74 52L67 50L74 48Z" fill="#06251e"/></svg>
+  Tap to open
+</button>
+
+<script>
+// ✏️ Edit these details
+var C = {
+  groom: "Mohammad Rayyan", bride: "Muskan Khan",
+  date: "2027-03-21T11:30:00",
+  venue: "Our Residence, Vill. & Post Mohamamdpur Gaunti, Moh. Uncha, P.S. Sultanpur Ghosi, Distt. Fatehpur (U.P.)", mapQ: "Mohamamdpur Gaunti, Fatehpur, Uttar Pradesh, India",
+  whatsapp: "916393089816"
+};
+var d = new Date(C.date), pad = function(n){return String(n).padStart(2,"0")};
+document.getElementById("groom").textContent = C.groom;
+document.getElementById("bride").textContent = C.bride;
+document.title = "Dawat-e-Walima · " + C.groom + " & " + C.bride;
+document.getElementById("dateText").textContent = d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+document.getElementById("timeText").textContent = "at " + d.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"});
+document.getElementById("venueText").textContent = C.venue;
+document.getElementById("rsvp").href = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent("Assalamu alaikum! InshaAllah I will attend the Dawat-e-Walima of " + C.groom + " & " + C.bride + ".");
+document.getElementById("map").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(C.mapQ);
+var f = function(x){return x.getFullYear()+pad(x.getMonth()+1)+pad(x.getDate())+"T"+pad(x.getHours())+pad(x.getMinutes())+"00"};
+var end = new Date(d.getTime()+3*36e5);
+document.getElementById("cal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent("Dawat-e-Walima of "+C.groom+" & "+C.bride) + "&dates=" + f(d) + "/" + f(end) + "&location=" + encodeURIComponent(C.venue);
+
+function tick(){
+  var s = Math.max(0, Math.floor((d - new Date())/1000));
+  document.getElementById("cd").textContent = Math.floor(s/86400);
+  document.getElementById("ch").textContent = pad(Math.floor(s%86400/3600));
+  document.getElementById("cm").textContent = pad(Math.floor(s%3600/60));
+  document.getElementById("cs").textContent = pad(s%60);
+}
+tick(); setInterval(tick, 1000);
+
+var dots = document.getElementById("dots");
+for (var i=0;i<28;i++){
+  var e = document.createElement("i");
+  e.style.left = Math.random()*100+"%";
+  e.style.animationDuration = (7+Math.random()*8)+"s";
+  e.style.animationDelay = (Math.random()*8)+"s";
+  dots.appendChild(e);
+}
+
+document.getElementById("seal").addEventListener("click", function(){
+  document.body.classList.add("open");
+  var doors = document.getElementById("doors");
+  setTimeout(function(){ doors.style.display = "none"; }, 3200);
+  document.querySelectorAll(".in > *").forEach(function(el,i){ el.style.animationDelay = (1.6+i*0.12)+"s"; });
+});
+</script>
+</body>
+</html>
